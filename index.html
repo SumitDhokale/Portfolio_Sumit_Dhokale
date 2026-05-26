@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Sumit Ajay Dhokale – Computer Science Engineer, Python Developer, ML Developer"/>
+  <title>Sumit Ajay Dhokale | CS Engineer & Python Developer</title>
+
+  <!-- Google Fonts: Syne + DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ==================== LOADER ==================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-initials">SAD</span>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+      </div>
+      <p class="loader-text">Initializing System...</p>
+    </div>
+  </div>
+
+  <!-- ==================== CUSTOM CURSOR ==================== -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ==================== CANVAS PARTICLES ==================== -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">sumit.dev</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero">
+    <div class="hero-grid">
+
+      <!-- Left: Text Content -->
+      <div class="hero-content" data-reveal>
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          Available for Opportunities
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line">Sumit Ajay</span>
+          <span class="name-line accent-glow">Dhokale</span>
+        </h1>
+        <div class="hero-role">
+          <span class="role-prefix">I am a </span>
+          <span id="typed-role" class="typed-text"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          B.Tech CSE student specializing in <em>Cloud Architecture</em> &amp; building
+          AI-powered solutions that solve real-world problems.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="ph ph-rocket-launch"></i> View My Work
+          </a>
+          <!-- Replace resume.pdf in assets/ with your actual resume -->
+          <a href="assets/resume.pdf" download class="btn btn-ghost">
+            <i class="ph ph-download-simple"></i> Download CV
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/sumit0110/" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="https://github.com/SumitDhokale" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="mailto:dhokalesumit0110@gmail.com" class="social-icon" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+          <a href="tel:+918668300443" class="social-icon" aria-label="Phone">
+            <i class="ph ph-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="hero-image-wrap" data-reveal data-delay="200">
+        <div class="hero-img-glow"></div>
+        <div class="hero-img-ring"></div>
+        <!--
+          Replace 'profile.jpg' with your own professional photo.
+          Place your photo in: assets/images/profile.jpg
+        -->
+        <img
+          src="assets/images/profile.jpg"
+          alt="Sumit Ajay Dhokale"
+          class="hero-img"
+          onerror="this.src='https://ui-avatars.com/api/?name=Sumit+Dhokale&background=0a0a0f&color=00f5ff&size=400&bold=true'"
+        />
+        <div class="img-badge badge-ml">
+          <i class="ph ph-brain"></i> Python Developer
+        </div>
+        <div class="img-badge badge-cloud">
+          <i class="ph ph-cloud"></i> Software Engineer
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-col" data-reveal>
+          <div class="about-img-frame">
+            <div class="frame-corner top-left"></div>
+            <div class="frame-corner top-right"></div>
+            <div class="frame-corner bottom-left"></div>
+            <div class="frame-corner bottom-right"></div>
+            <!--
+              Replace 'profile.jpg' with your own professional photo.
+              Place your photo in: assets/images/profile.jpg
+            -->
+            <img
+              src="assets/images/profile.jpg"
+              alt="Sumit Ajay Dhokale"
+              class="about-img"
+              onerror="this.src='https://ui-avatars.com/api/?name=Sumit+Dhokale&background=0a0a0f&color=00f5ff&size=400&bold=true'"
+            />
+            <div class="about-img-overlay"></div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card" data-count="8.09" data-suffix=" CGPA">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Academic Score</span>
+            </div>
+            <div class="stat-card" data-count="5" data-suffix="+">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card" data-count="4" data-suffix="+">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content-col" data-reveal data-delay="150">
+          <p class="about-text">
+            I'm a <strong>B.Tech Computer Science Engineering</strong> student at Annasaheb Dange College of Engineering and Technology, Ashta, with Honors specialization in <strong>Cloud Architecture</strong> and a Minor in <strong>Electric Vehicle Technology</strong>.
+          </p>
+          <p class="about-text">
+            I'm passionate about <strong>Software Development</strong> , <strong>Python Development</strong> and <strong>Machine Learning</strong>. I enjoy building AI-powered applications that solve real-world problems.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="ph ph-map-pin"></i>
+              <span>Maharashtra, India</span>
+            </div>
+            <div class="highlight-item">
+              <i class="ph ph-graduation-cap"></i>
+              <span>B.Tech CSE (2022–2026)</span>
+            </div>
+            <div class="highlight-item">
+              <i class="ph ph-envelope-simple"></i>
+              <span>dhokalesumit0110@gmail.com</span>
+            </div>
+            <div class="highlight-item">
+              <i class="ph ph-phone"></i>
+              <span>+91 8668300443</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">
+            <i class="ph ph-paper-plane-tilt"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">02 — Skills</span>
+        <h2 class="section-title">Technical Arsenal</h2>
+      </div>
+      <div class="skills-grid" data-reveal>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="ph ph-code"></i>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="ph ph-globe"></i>
+            <h3>Web Technologies</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="ph ph-database"></i>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Supabase</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="ph ph-cloud"></i>
+            <h3>Cloud &amp; Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Cloud Computing</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="ph ph-brain"></i>
+            <h3>Machine Learning</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">ML</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">CNN</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">TF-IDF</span>
+            <span class="skill-tag">Logistic Regression</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="ph ph-test-tube"></i>
+            <h3>Software Testing</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Selenium IDE</span>
+            <span class="skill-tag">Selenium WebDriver</span>
+            <span class="skill-tag">JMeter</span>
+            <span class="skill-tag">JUnit</span>
+            <span class="skill-tag">TestNG</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card skill-category-card--wide">
+          <div class="skill-cat-header">
+            <i class="ph ph-users-three"></i>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Leadership</span>
+            <span class="skill-tag">Analytical Thinking</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Creative Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION SECTION ==================== -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">03 — Education</span>
+        <h2 class="section-title">Academic Journey</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge">2022 – 2026</div>
+            <h3 class="timeline-title">B.Tech – Computer Science &amp; Engineering</h3>
+            <p class="timeline-sub">Annasaheb Dange College of Engineering and Technology, Ashta</p>
+            <div class="timeline-meta">
+              <span><i class="ph ph-star"></i> CGPA: 8.09</span>
+              <span><i class="ph ph-certificate"></i> Honors: Cloud Architecture</span>
+              <span><i class="ph ph-lightning"></i> Minor: EV Technology</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal data-delay="100">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge">12th — HSC</div>
+            <h3 class="timeline-title">Higher Secondary Certificate</h3>
+            <p class="timeline-sub">Sadguru Gadge Maharaj College, Karad</p>
+            <div class="timeline-meta">
+              <span><i class="ph ph-percent"></i> Percentage: 63.33%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal data-delay="200">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge">10th — SSC</div>
+            <h3 class="timeline-title">Secondary School Certificate</h3>
+            <p class="timeline-sub">Shivaji High School, Bavachi</p>
+            <div class="timeline-meta">
+              <span><i class="ph ph-percent"></i> Percentage: 93.40%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE SECTION ==================== -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">04 — Experience</span>
+        <h2 class="section-title">Internships &amp; Certifications</h2>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-card internship-card" data-reveal>
+          <div class="exp-card-glow"></div>
+          <div class="exp-icon"><i class="ph ph-brain"></i></div>
+          <div class="exp-type">Internship</div>
+          <h3 class="exp-title">Data Science and AI Internship</h3>
+          <p class="exp-company">Racksons IT Solutions Pvt Ltd</p>
+          <p class="exp-duration">1 July 2026 – 15 July 2026</p>
+          <p class="exp-desc">Hands-on training in deep learning techniques, neural network architectures, and model deployment.</p>
+        </div>
+
+        <div class="exp-card internship-card" data-reveal>
+          <div class="exp-card-glow"></div>
+          <div class="exp-icon"><i class="ph ph-brain"></i></div>
+          <div class="exp-type">Internship</div>
+          <h3 class="exp-title">Data Science Intern</h3>
+          <p class="exp-company">Shorat Innovations Pvt Ltd</p>
+          <p class="exp-duration">5 January 2026 – 5 May 2026</p>  
+          <p class="exp-desc">Successfully completed a 4-month internship in the Data Science domain, where I gained hands-on experience in Python, Machine Learning, and data analysis. Worked on a Fake News Detection System project using classification techniques and real-world datasets.</p>
+        </div>
+
+        <div class="exp-card cert-card" data-reveal data-delay="200">
+          <div class="exp-card-glow"></div>
+          <div class="exp-icon"><i class="ph ph-certificate"></i></div>
+          <div class="exp-type">Certification</div>
+          <h3 class="exp-title">Cloud Computing</h3>
+          <p class="exp-company">NPTEL Certified</p>
+          <p class="exp-desc">Nationally recognized certification covering cloud fundamentals, distributed systems, and cloud service models.</p>
+        </div>
+
+        <div class="exp-card cert-card" data-reveal data-delay="300">
+          <div class="exp-card-glow"></div>
+          <div class="exp-icon"><i class="ph ph-cloud-arrow-up"></i></div>
+          <div class="exp-type">Certification</div>
+          <h3 class="exp-title">AWS Cloud Architecture</h3>
+          <p class="exp-company">Amazon Web Services</p>
+          <p class="exp-desc">Certified in designing and deploying scalable, reliable cloud infrastructure using AWS services and best practices.</p>
+        </div>
+
+        <div class="exp-card cert-card" data-reveal data-delay="200">
+          <div class="exp-card-glow"></div>
+          <div class="exp-icon"><i class="ph ph-certificate"></i></div>
+          <div class="exp-type">Certification</div>
+          <h3 class="exp-title">Indian Knowledge System</h3>
+          <p class="exp-company">NPTEL Certified</p>
+          <p class="exp-desc">Successfully completed the NPTEL certification course on Indian Knowledge System, gaining insights into India's traditional knowledge, culture, heritage, and scientific contributions.</p>
+        </div>
+
+        <div class="exp-card cert-card" data-reveal data-delay="300">
+          <div class="exp-card-glow"></div>
+          <div class="exp-icon"><i class="ph ph-certificate"></i></div>
+          <div class="exp-type">Certification</div>
+          <h3 class="exp-title">Principles of Management</h3>
+          <p class="exp-company">NPTEL Certified</p>
+          <p class="exp-desc">Successfully completed the NPTEL certification course on Principles of Management, covering management fundamentals, leadership, organizational behavior, and strategic decision-making concepts.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">05 — Projects</span>
+        <h2 class="section-title">What I've Built</h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters" data-reveal>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="ml">ML / AI</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+
+      <div class="projects-grid">
+      
+        <!-- Project 1 -->
+        <div class="project-card" data-category="ml" data-reveal data-delay="200">
+          <div class="project-card-inner">
+            <div class="project-number">01</div>
+            <div class="project-tags-top">
+              <span class="ptag ml">ML / AI</span>
+            </div>
+            <h3 class="project-title">Medical Coding Prediction Using ML</h3>
+            <p class="project-desc">
+              ML-based medical coding prediction system that predicts ICD-10 codes from clinical text using NLP and multi-label classification techniques.
+            </p>
+            <div class="project-features">
+              <span>TF-IDF</span>
+              <span>Bag of Words</span>
+              <span>Logistic Regression</span>
+              <span>GUI (Tkinter)</span>
+            </div>
+            <div class="project-stack">
+              <span class="stack-badge">Python</span>
+              <span class="stack-badge">ML</span>
+              <span class="stack-badge">NLP</span>
+              <span class="stack-badge">Tkinter</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/SumitDhokale/Medical-coding-using-Machine-Learning" class="project-btn" target="_blank">
+                <i class="ph ph-github-logo"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="project-card-bg"></div>
+        </div>
+
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="ml" data-reveal data-delay="100">
+          <div class="project-card-inner">
+            <div class="project-number">02</div>
+            <div class="project-tags-top">
+              <span class="ptag ml">ML / AI</span>
+            </div>
+            <h3 class="project-title">Object Detection System</h3>
+            <p class="project-desc">
+              A deep learning-based object detection system using CNNs and OpenCV for real-time image processing and multi-category object identification.
+            </p>
+            <div class="project-features">
+              <span>Real-time Detection</span>
+              <span>CNN Model</span>
+              <span>Image Processing</span>
+            </div>
+            <div class="project-stack">
+              <span class="stack-badge">Python</span>
+              <span class="stack-badge">CNN</span>
+              <span class="stack-badge">OpenCV</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/SumitDhokale/Object-Detection-System" class="project-btn" target="_blank">
+                <i class="ph ph-github-logo"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="project-card-bg"></div>
+        </div>
+
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="ml" data-reveal data-delay="300">
+          <div class="project-card-inner">
+            <div class="project-number">03</div>
+            <div class="project-tags-top">
+              <span class="ptag ml">ML / AI</span>
+            </div>
+            <h3 class="project-title">Fake News Detection System Using ML & NLP</h3>
+            <p class="project-desc">
+              An end-to-end fake news detection system that classifies news articles as Fake or Real using NLP preprocessing and machine learning classifiers with a real-time Streamlit web interface.
+            </p>
+            <div class="project-features">
+              <span>TF-IDF</span>
+              <span>Bag of Words</span>
+              <span>Logistic Regression</span>
+              <span>Streamlit UI</span>
+            </div>
+            <div class="project-stack">
+              <span class="stack-badge">Python</span>
+              <span class="stack-badge">ML</span>
+              <span class="stack-badge">NLP</span>
+              <span class="stack-badge">Streamlit</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="project-btn" target="_blank">
+                <i class="ph ph-github-logo"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="project-card-bg"></div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="cloud web" data-reveal>
+          <div class="project-card-inner">
+            <div class="project-number">04</div>
+            <div class="project-tags-top">
+              <span class="ptag cloud">Cloud</span>
+              <span class="ptag web">Web</span>
+            </div>
+            <h3 class="project-title">Cloud Native Library Resource Orchestration System</h3>
+            <p class="project-desc">
+              A cloud-native library management platform deployed on Vercel with Supabase backend. Manages resources, users, issue-return workflows, authentication, and cloud DB operations.
+            </p>
+            <div class="project-features">
+              <span>Vercel Deployment</span>
+              <span>Supabase Auth</span>
+              <span>PostgreSQL</span>
+              <span>Resource Tracking</span>
+            </div>
+            <div class="project-stack">
+              <span class="stack-badge">HTML</span>
+              <span class="stack-badge">CSS</span>
+              <span class="stack-badge">JavaScript</span>
+              <span class="stack-badge">Supabase</span>
+              <span class="stack-badge">PostgreSQL</span>
+              <span class="stack-badge">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/SumitDhokale/library-resource-orchestration" class="project-btn" target="_blank">
+                <i class="ph ph-github-logo"></i> Code
+              </a>
+              <a href="https://library-resource-orchestration.vercel.app" class="project-btn project-btn-live" target="_blank">
+                <i class="ph ph-arrow-square-out"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-card-bg"></div>
+        </div>
+
+        <!-- Project 05 -->
+        <div class="project-card" data-category="web" data-reveal data-delay="400">
+          <div class="project-card-inner">
+            <div class="project-number">05</div>
+
+            <div class="project-tags-top">
+              <span class="ptag web">Web Development</span>
+            </div>
+
+            <h3 class="project-title">
+              Swapna Nagari Jewelry Showcase Website
+            </h3>
+
+            <p class="project-desc">
+              A modern and responsive jewelry showcase website developed for displaying elegant jewelry collections with attractive UI design, category sections, product showcases, and smooth user experience.
+            </p>
+
+            <div class="project-features">
+              <span>Responsive Design</span>
+              <span>Product Showcase</span>
+              <span>Modern UI</span>
+              <span>Interactive Layout</span>
+            </div>
+
+            <div class="project-stack">
+              <span class="stack-badge">HTML</span>
+              <span class="stack-badge">CSS</span>
+              <span class="stack-badge">JavaScript</span>
+              <span class="stack-badge">PHP</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/SumitDhokale/-Swapna-Nagari-Online-Jewelry-Shop-Website" class="project-btn" target="_blank">
+                <i class="ph ph-github-logo"></i> Code
+              </a>
+            </div>
+
+          </div>
+
+          <div class="project-card-bg"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ACHIEVEMENTS SECTION ==================== -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">06 — Achievements</span>
+        <h2 class="section-title">By The Numbers</h2>
+      </div>
+      <div class="achievements-grid" data-reveal>
+        <div class="achievement-card">
+          <div class="ach-number" data-count="8" data-decimal=".09">0</div>
+          <div class="ach-label">CGPA</div>
+          <div class="ach-sub">Academic Excellence</div>
+        </div>
+        <div class="achievement-card">
+          <div class="ach-number" data-count="5">0</div>
+          <div class="ach-label">Projects</div>
+          <div class="ach-sub">Built &amp; Deployed</div>
+        </div>
+        <div class="achievement-card">
+          <div class="ach-number" data-count="4">0</div>
+          <div class="ach-label">Certifications</div>
+          <div class="ach-sub">Industry Recognized</div>
+        </div>
+        <div class="achievement-card">
+          <div class="ach-number" data-count="2">0</div>
+          <div class="ach-label">Internships</div>
+          <div class="ach-sub">Real-world Experience</div>
+        </div>
+        <div class="achievement-card">
+          <div class="ach-number" data-count="20">0</div>
+          <div class="ach-label">Skills</div>
+          <div class="ach-sub">Technologies Mastered</div>
+        </div>
+        <div class="achievement-card">
+          <div class="ach-number" data-count="93">0</div>
+          <div class="ach-label">10th Score</div>
+          <div class="ach-sub">Secondary School %</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">07 — Contact</span>
+        <h2 class="section-title">Let's Connect</h2>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info" data-reveal>
+          <p class="contact-intro">
+            Whether you have an opportunity, a project idea, or just want to say hello — my inbox is always open. Let's build something great together.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:dhokalesumit0110@gmail.com" class="contact-link">
+              <div class="cl-icon"><i class="ph ph-envelope-simple"></i></div>
+              <div class="cl-text">
+                <span class="cl-label">Email</span>
+                <span class="cl-value">dhokalesumit0110@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+918668300443" class="contact-link">
+              <div class="cl-icon"><i class="ph ph-phone"></i></div>
+              <div class="cl-text">
+                <span class="cl-label">Phone</span>
+                <span class="cl-value">+91 8668300443</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/sumit0110/" target="_blank" class="contact-link">
+              <div class="cl-icon">
+                <i class="ph ph-linkedin-logo"></i>
+              </div>
+
+              <div class="cl-text">
+                <span class="cl-label">LinkedIn</span>
+                <span class="cl-value">linkedin.com/in/sumit0110</span>
+              </div>
+            </a>
+            <a href="https://github.com/SumitDhokale" target="_blank" class="contact-link">
+              <div class="cl-icon">
+                <i class="ph ph-github-logo"></i>
+              </div>
+
+              <div class="cl-text">
+                <span class="cl-label">GitHub</span>
+                <span class="cl-value">github.com/SumitDhokale</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-reveal data-delay="150">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Collaboration"/>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="ph ph-paper-plane-tilt"></i> Send Message
+            </button>
+            <p class="form-note" id="form-note"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-name">sumit.dev</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-tagline">Building tomorrow's solutions, today.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/sumit0110/" target="_blank" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="https://github.com/SumitDhokale" target="_blank" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="mailto:dhokalesumit0110@gmail.com" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Sumit Ajay Dhokale. Crafted with <span class="heart">♥</span> in Maharashtra, India.</p>
+        <p class="footer-built">Built with HTML · CSS · JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BACK TO TOP ==================== -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="ph ph-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
